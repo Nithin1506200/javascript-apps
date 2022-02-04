@@ -1,0 +1,62 @@
+@import "./color";
+@import "./function";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+body {
+  @include FlexCenter();
+  min-height: 100vh;
+  background-color: var(--dark);
+  color: #fff;
+  header {
+    padding: 2rem 1rem;
+
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    h1 {
+      font-size: calc(5vw + 16px);
+      font-weight: 300;
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+    #new-task-form {
+      display: flex;
+      #new-task-input {
+        flex: 1 1 0%;
+        background-color: var(--darker);
+        padding: 1rem;
+        border-radius: 1rem;
+        margin-right: 1rem;
+        color: var(--light);
+        font-size: 1.25rem;
+      }
+      #new-task-submit {
+        @include GradientText(--pink, --purple);
+        font-size: 1.25rem;
+        font-weight: 700;
+        cursor: pointer;
+        &:hover,
+        &:active {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+  main {
+    flex: 1 1 0%;
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+input,
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+}

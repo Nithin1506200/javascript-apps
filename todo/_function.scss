@@ -1,0 +1,10 @@
+@mixin FlexCenter() {
+  display: flex;
+  flex-direction: column;
+}
+@mixin GradientText($right, $left) {
+  background-image: linear-gradient(to right, var($right), var($left));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
