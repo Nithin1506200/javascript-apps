@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+
+  padding: 0;
+}
+body,
+html {
+  margin: 0;
+  overflow-x: hidden;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#canvas {
+  border: red 2px solid;
+  display: block;
+  transform: scale(2, 2);
+}
