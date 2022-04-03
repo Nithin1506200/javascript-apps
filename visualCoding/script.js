@@ -3,7 +3,7 @@ const ctx = canvas.getContext("2d");
 let canvasData;
 let grid = [];
 let next = [];
-let kernel = 50;
+let kernel = 10;
 let Da = 1,
   Db = 0.05,
   feed = 0.055,
@@ -35,6 +35,15 @@ function setup() {
       ) {
         grid[x][y].b = 1;
       }
+    }
+    for (let x = 0; x < width; x++) {
+      grid[x][0].a = 0;
+      grid[x][height - 1].a = 0;
+    }
+    for (let x = 0; x < width; x++) {
+      grid[0][x].a = 0;
+      grid[width - 1][x].a = 0;
+      //console.log("this");
     }
     for (let x = 0; x < width; x++) {
       for (let y = 0; y < height; y++) {
@@ -83,18 +92,18 @@ function swap() {
 
 function drawPixel(x, y, r, g, b, a) {
   const index = (x + y * width) * 4;
-  let c = Math.floor(((r - b) / (r + b)) * 255);
+  let c = Math.floor((r - b) * 255);
 
   let c2 = Math.floor((r / (r + b)) * 255);
   let c3 = Math.floor((b / (r + b)) * 255);
   c3 = constrain(c3, 0, 255);
   c2 = constrain(c2, 0, 255);
   c = constrain(c, 0, 255);
-  canvasData.data[index + 0] = 255 - c;
+  canvasData.data[index + 0] = c;
 
   //console.log(r, b, g);
-  canvasData.data[index + 1] = c2;
-  canvasData.data[index + 2] = c2;
+  canvasData.data[index + 1] = c;
+  canvasData.data[index + 2] = c;
   canvasData.data[index + 3] = 255;
 }
 function updateCanvas() {
@@ -154,6 +163,6 @@ async function main() {
 
     await updateCanvas();
     await swap();
-  });
+  }, 5);
 }
 main();
