@@ -7,6 +7,28 @@
     <title>calculating pi</title>
   </head>
   <body>
-    <h1>Time taken to calculate pi</h1>
+    <span>Resolution</span> <input type="number" id="res" />
+    <button id="find">Calculate</button>
+    <div style="width: 100%; height: 5em">
+      <p style="color: red" id="output">0 s</p>
+      <p style="color: red" id="outputR">0 s</p>
+      <div
+        id="javascript"
+        style="height: 1em; width: 0; background-color: yellow"
+      ></div>
+      <div
+        id="rust"
+        style="height: 1em; width: 0; background-color: brown"
+      ></div>
+    </div>
+    <!-- <h2>Time taken to calculate pi using javascript</h1>
+   
+   
+   <p style="color: red" id="output">0 s</p>
+   <h2>Time taken to calculate pi using wasm</h1>
+   <button id="findR">Calculate</button>
+   <p style="color: red" id="outputR">0 s</p>
+   -->
+    <script type="module" src="index.js"></script>
   </body>
 </html>
