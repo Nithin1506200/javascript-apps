@@ -9,6 +9,6 @@ const motionHandler = new DeviceMotion();
 //console.log(motionHandler.deviceMotion);
 setInterval(handle, 1000);
 function handle() {
-  x.innerText = JSON.stringify(motionHandler);
+  x.innerText = JSON.stringify(motionHandler.deviceMotion);
   console.log(motionHandler.deviceMotion);
 }
