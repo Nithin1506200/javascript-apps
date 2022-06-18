@@ -9,6 +9,6 @@ motionHandler.deviceMotion.interval = 30;
 //console.log(motionHandler.deviceMotion);
 setInterval(handle, 1000);
 function handle() {
-  x.innerText = JSON.stringify(motionHandler.deviceMotion);
+  x.innerText = JSON.stringify(motionHandler);
   console.log(motionHandler.deviceMotion);
 }
