@@ -5,7 +5,7 @@ const z = document.getElementById("z");
 const lable = document.getElementById("lable");
 
 const motionHandler = new DeviceMotion();
-motionHandler.deviceMotion.interval = 30;
+
 //console.log(motionHandler.deviceMotion);
 setInterval(handle, 1000);
 function handle() {
